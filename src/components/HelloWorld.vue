@@ -1,11 +1,11 @@
 <template>
-  <ul v-for="post in state.posts" :key="post.id">
+  <ul v-for="post in posts" :key="post.id">
     <li>{{post.author}} - {{post.title}}</li>
   </ul>
 </template>
 
 <script>
-import {ref,reactive,onMounted} from 'vue'
+import {onMounted,toRefs} from 'vue'
 import state from '../composables/postComposer'
 import axios from 'axios'
 export default {
@@ -16,7 +16,7 @@ export default {
       console.log('app mounted!')
     })
 
-    return {state}
+    return {...toRefs(state)}
   }
 }
 </script>
