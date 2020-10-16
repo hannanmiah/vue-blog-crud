@@ -1,6 +1,9 @@
 <template>
   <ul v-for="post in posts" :key="post.id">
-    <li>{{post.author}} - {{post.title}}</li>
+    <li>
+      <div class="title">{{post.title}}</div>
+      <div class="meta">{{post.author}}</div>
+    </li>
   </ul>
 </template>
 
@@ -9,7 +12,7 @@ import {onMounted,toRefs} from 'vue'
 import state from '../composables/postComposer'
 import axios from 'axios'
 export default {
-  name: 'HelloWorld',
+  name: 'Post',
   setup(){
     onMounted(()=> {
       state.loadData()
@@ -20,3 +23,14 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .title {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .meta {
+    display: block;
+    font-size: 1rem;
+  }
+</style>

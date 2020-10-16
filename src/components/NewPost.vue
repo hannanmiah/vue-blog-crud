@@ -36,10 +36,10 @@ export default {
 <style>
     input {
         display: block;
-        border: 2px solid #ddd;
+        width: 100%;
+        border: 1px solid #ddd;
         padding: 5px;
         margin: 5px auto;
-        max-width: 500px;
     }
 
 </style>

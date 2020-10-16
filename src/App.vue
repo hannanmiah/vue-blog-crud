@@ -1,27 +1,25 @@
 <template>
-<h1>Vue 3 simple blog app</h1>
-  <div class="box">
+<h1 class="heading">Vue 3 simple blog app</h1>
     <Suspense>
     <template #default>
-      <HelloWorld/>
+      <Post/>
     </template>
     <template #fallback>
       loading...
     </template>
   </Suspense>
   <new-post/>
-  </div>
 </template>
 
 <script>
 import {onErrorCaptured,ref} from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Post from './components/Post.vue'
 import NewPost from './components/NewPost.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Post,
     NewPost
   },
   setup(){
@@ -50,11 +48,22 @@ export default {
       list-style-type: none;
     }
 
+    ul li{
+      border: 1px solid rgb(247, 238, 238);
+      padding: 10px;
+    }
+
     button {
+      display: block;
       border: 2px solid palegreen;
       background: green;
       padding: 5px;
       border-radius: 5px;
       color: white;
+      margin: 5px auto;
+    }
+
+    .heading {
+      text-align: center;
     }
 </style>
