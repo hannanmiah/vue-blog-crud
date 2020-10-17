@@ -10,6 +10,16 @@ const state = reactive({
         console.log(e)
        }
     },
+    async deletePost(id){
+        try {
+            const res = await axios.delete(`http://localhost:8000/posts/${id}`)
+            this.loadData()
+            console.log(res)
+        }catch(e){
+            console.log(e)
+        }
+    },
+
     totalPost: computed(() => {
         return state.posts.length
     })

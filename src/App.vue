@@ -61,6 +61,7 @@ export default {
       border-radius: 5px;
       color: white;
       margin: 5px auto;
+      cursor: pointer;
     }
 
     .heading {

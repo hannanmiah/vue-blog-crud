@@ -1,7 +1,7 @@
 <template>
   <ul v-for="post in posts" :key="post.id">
     <li>
-      <div class="title">{{post.title}}</div>
+      <div class="title">{{post.title}} <button @click="deletePost(post.id)" class="badge danger">Delete</button></div>
       <div class="meta">{{post.author}}</div>
     </li>
   </ul>
@@ -32,5 +32,23 @@ export default {
   .meta {
     display: block;
     font-size: 1rem;
+  }
+
+  .badge {
+    display: inline-block;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .success {
+    background: green;
+    border: 1px solid rgb(1, 66, 1);
+  }
+
+  .danger {
+    background: red;
+    border: 1px solid rgb(136, 5, 5);
   }
 </style>
